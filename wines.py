@@ -24,6 +24,7 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import statsmodels.graphics.api as smg
 from statsmodels.stats.weightstats import ttest_ind
+from statsmodels.stats.outliers_influence import variance_inflation_factor as vif
 
 ####################################################################################################
 # SOURCES
@@ -42,12 +43,16 @@ all_wines = pd.concat([red_wines, white_wines])
 
 #yes, we could use quartiles.  But isolating the property that's actually desired seems more useful.
 quality_reds = red_wines[red_wines["quality"]>=6]
+quality_reds.name = "quality_reds"
 quality_whites = white_wines[white_wines["quality"]>=6]
+quality_whites.name = "quality_whites"
 poor_reds = red_wines[red_wines["quality"]<=4]
+poor_reds.name = "poor_reds"
 poor_whites = white_wines[white_wines["quality"]<=4]
+poor_whites.name = "poor_whites"
 
-#default confidence level
-ALPHA = 0.05
+#default confidence level, set a little low.
+ALPHA = 0.01
 #column names - all equivalent
 variables = red_wines.columns
 #useful keymaps
@@ -88,6 +93,14 @@ def plot_single_regression(winelist, var):
     plt.title(f"quadratic fit for {var} in {winelist.name} wines")   
     plt.show()
 
+def plot_corr(red_corr, white_corr):
+    smg.plot_corr(red_corr, xnames=variables, ynames=variables, 
+                  cmap="Reds", normcolor=True) #title=f"collinearity of {winelist.name} wines")
+    smg.plot_corr(white_corr, xnames=variables, ynames=variables, 
+                  cmap="YlGn", normcolor=True )#, title=f"collinearity of {winelist.name} wines", 
+                  #ax=ax)
+    plt.show()
+
 def tabulate_recipe(input_filename="recipe.csv"):
     def colorise(val):
         cmap = {UP_ARROW : "green", DOWN_ARROW : "red", "nan" : "grey"}
@@ -101,24 +114,36 @@ def tabulate_recipe(input_filename="recipe.csv"):
         f.write(html)
 
 ####################################################################################################
+# CALCULATIONS
 
-def compare_wines(wines_a, wines_b, filename = "comparison.csv"):
-    #wines_a_data, wines_b_data = wines_a["data"], wines_b["data"]
+def compare_wines(wines_a, wines_b, results_filename = "_comparison.csv"):
+    print(f"comparing {wines_a.name} and {wines_b.name}")
     index=["var", "t", "P", "DoF"]
     t_test_results = pd.DataFrame(columns=index)
     for var in variables:
         s = pd.Series([var, *ttest_ind(wines_a[var], wines_b[var])], index=index)
         t_test_results = t_test_results.append(s, ignore_index=True)
     print(t_test_results)
-    t_test_results.to_csv(filename)
+    t_test_results.to_csv(wines_a.name + wines_b.name + results_filename)
 
-def find_predictor(winelist, results_filename):
+def test_collinear(winelist):
+    print(f"testing collinearity for {winelist.name}")
+    for i, var in enumerate(variables): 
+        print(f"{var} VIF is: {vif(winelist.values, i)}")
+    corr_matrix = np.corrcoef(winelist, rowvar=False)
+    return corr_matrix
+
+def compare_quality_to_poor():
+    pass
+
+def find_predictor(winelist, results_filename="_model_results.txt"):
     """
-    Runs OLS regression for each attribute individually (i.e. not testing for collinearity yet).
+    Runs OLS regression for each attribute individually (i.e. not testing for collinearity yet),
+    based on a quadratic fit.
     """
-    models, recipe = [], []
     print(f"finding predictors for: {winelist.name}")
-    with open(results_filename, "w") as f:
+    models, recipe = [], []
+    with open(winelist.name + results_filename, "w") as f:
         for var in variables[:-2]: #last column is red/white, second last the DV
             fm = f"quality ~ Q('{var}') + I(Q('{var}') ** 2)" 
             # minimum quality is 3, max is 9, so don't worry about setting intercepts
@@ -148,20 +173,18 @@ def get_action(var, model):
 
 ###################################################################################################
 
-def test_collinear(winelist):
-    corr_matrix = np.corrcoef(winelist["data"])
-    smg.plot_corr(corr_matrix)
-    plt.show()
-
 if __name__ == "__main__":
     #plot_wines(quality_reds, poor_reds)
-    compare_wines(quality_reds, poor_reds)
-    red_predictor, white_predictor = (find_predictor(red_wines, "red_model_results.txt"),
-                                      find_predictor(white_wines, "white_model_results.txt"))
+    compare_wines(quality_whites, poor_whites)
+    red_corr, white_corr = test_collinear(red_wines), test_collinear(white_wines)
+    plot_corr(red_corr, white_corr)
+    red_predictor, white_predictor = (find_predictor(red_wines),
+                                      find_predictor(white_wines))
     #for var in variables:
     #    plot_single_regression(red_wines, var)
     #    plot_single_regression(white_wines, var)
     #tabulate_recipe()
+    
 
 
 
