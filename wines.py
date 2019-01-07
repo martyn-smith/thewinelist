@@ -134,7 +134,12 @@ def test_collinear(winelist):
     return corr_matrix
 
 def compare_quality_to_poor():
-    pass
+    print("comparing quality and poor red wines")
+    compare_wines(quality_reds, poor_reds)
+    print(quality_reds.mean() - poor_reds.mean())
+    print("comparing quality and poor white wines")
+    compare_wines(quality_whites, poor_whites)
+    print(quality_whites.mean() - quality_whites.mean())
 
 def find_predictor(winelist, results_filename="_model_results.txt"):
     """
@@ -174,8 +179,8 @@ def get_action(var, model):
 ###################################################################################################
 
 if __name__ == "__main__":
-    #plot_wines(quality_reds, poor_reds)
-    compare_wines(quality_whites, poor_whites)
+    plot_wines(red_wines, white_wines)
+    compare_quality_to_poor()
     red_corr, white_corr = test_collinear(red_wines), test_collinear(white_wines)
     plot_corr(red_corr, white_corr)
     red_predictor, white_predictor = (find_predictor(red_wines),
