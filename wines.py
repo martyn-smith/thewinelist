@@ -6,6 +6,11 @@ Question:
 The latter question appears to be a fairly standard multivariate regression problem -
 The former is more geared towards a neural network approach although testing for collinearity
 will also yield results.
+
+TODO: 
+-Bayesian methods ("find_predictors" is really more like optimisiation,
+good for industry but doesn't answer "good/bad if X" well).
+-Font wrapping.
 """
 
 """
@@ -34,12 +39,12 @@ schema_url = data_url + "winequality.names"
 red_filename = "winequality-red.csv"
 white_filename = "winequality-white.csv"
 
-#initial import.  User may want to run their own analysis, so these have not been enclosed.
+####################################################################################################
+# initial import.  User may want to run their own analysis, so these have not been enclosed.
 red_wines = pd.read_csv(data_url + red_filename, delimiter=";")
 red_wines.name = "red"
 white_wines = pd.read_csv(data_url + white_filename, delimiter=";")
 white_wines.name = "white"
-all_wines = pd.concat([red_wines, white_wines])
 
 #yes, we could use quartiles.  But isolating the property that's actually desired seems more useful.
 quality_reds = red_wines[red_wines["quality"]>=6]
@@ -53,8 +58,10 @@ poor_whites.name = "poor_whites"
 
 #default confidence level, set a little low.
 ALPHA = 0.01
-#column names - all equivalent
-variables = red_wines.columns
+#column names - all equivalent.  Could use any of the dataframes if desired.
+variables = ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar',
+             'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density',
+             'pH', 'sulphates', 'alcohol', 'quality']
 #useful keymaps
 UP_ARROW = "↑"
 DOWN_ARROW = "↓"
@@ -62,12 +69,12 @@ DOWN_ARROW = "↓"
 ####################################################################################################
 # Plotting methods
 
-def plot_wines(wines_a, wines_b):
-    """
-    plots two wine datasets on a log scale
-    """
-    sns.violinplot(data=wines_a, scale="width", width=1.3, color="crimson")
-    sns.violinplot(data=wines_b, scale="width", width=1.3, color="gold")
+def plot_wines():
+    red_melted = pd.melt(red_wines)
+    white_melted = pd.melt(white_wines)
+    df = pd.concat([red_melted.assign(variant="red"), white_melted.assign(variant="white")])
+    sns.violinplot(x="variable", y="value", data=df, scale="width", hue="variant", split=True,
+                   palette=["crimson", "gold"])
     plt.xlabel("Attributes")
     plt.ylabel("Arbitrary units")
     plt.yscale("log")
@@ -76,7 +83,7 @@ def plot_wines(wines_a, wines_b):
 
 def plot_single_regression(winelist, var):
     """
-    visualisation of single quadratic regression ref'd
+    visualisation of single quadratic regression.
     """
     minvar, maxvar = winelist[var].min(), winelist[var].max()
     fm = f"quality ~ Q('{var}') + I(Q('{var}') ** 2)"
@@ -95,10 +102,9 @@ def plot_single_regression(winelist, var):
 
 def plot_corr(red_corr, white_corr):
     smg.plot_corr(red_corr, xnames=variables, ynames=variables, 
-                  cmap="Reds", normcolor=True) #title=f"collinearity of {winelist.name} wines")
+                  cmap="Reds", normcolor=True) 
     smg.plot_corr(white_corr, xnames=variables, ynames=variables, 
-                  cmap="YlGn", normcolor=True )#, title=f"collinearity of {winelist.name} wines", 
-                  #ax=ax)
+                  cmap="YlGn", normcolor=True)
     plt.show()
 
 def tabulate_recipe(input_filename="recipe.csv"):
@@ -134,6 +140,9 @@ def test_collinear(winelist):
     return corr_matrix
 
 def compare_quality_to_poor():
+    """
+    Simple independent t-test on quality and poor wines (closest thing to true predictors here).
+    """
     print("comparing quality and poor red wines")
     compare_wines(quality_reds, poor_reds)
     print(quality_reds.mean() - poor_reds.mean())
@@ -163,6 +172,10 @@ def find_predictor(winelist, results_filename="_model_results.txt"):
     return models, recipe
 
 def get_action(var, model):
+    """
+    Simple utility to find an optimum (if possible), or state whether var should be 
+    maximised or minimised.
+    """
     def optimise(var, model):
         print(f"optimising... {var}")
         return np.roots(model.params)[1]
@@ -179,7 +192,7 @@ def get_action(var, model):
 ###################################################################################################
 
 if __name__ == "__main__":
-    plot_wines(red_wines, white_wines)
+    plot_wines()
     compare_quality_to_poor()
     red_corr, white_corr = test_collinear(red_wines), test_collinear(white_wines)
     plot_corr(red_corr, white_corr)

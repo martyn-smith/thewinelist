@@ -29,7 +29,8 @@ The \href{http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/
 density, pH, sulphates and alcohol content (the dataset is complete, though units are not provided). 
 \\~\\
 On a superficial level, there are clearly two types of wine: red and white, although that may be considered anthropomorphic.  T-test of the two datasets
-confirms they are indeed different in every measured variable except alcohol content, with red wines having greater acidity, less residual sugar, and less sulfur dioxide.
+confirms they are significantly ($\alpha < 0.01$) different in every measured variable, although alcohol content is marginal. Red wines have greater (fixed and volatile) acidity, chlorides and sulphates, and white wines have greater citric acid (132 red wines had no detectable citric acid at all), 
+residual sugar, and (free and total) sulfur dioxide.
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{figures/red_white_properties_log_axis.png}
@@ -38,9 +39,13 @@ confirms they are indeed different in every measured variable except alcohol con
 \end{figure}
 
 \section*{Types of wine}
-llustrates correlation between different measured properties (darker colours indicate a greater association).  Some associations are intuitive; 
-citric acid and fixed acidity are related, as are both with a low pH.  In addition, fixed acidity is associated with higher density, and 
-chlorides with sulphates.
+llustrates correlation between different measured properties (darker colours indicate a greater association).  Some correlations are intuitive; 
+e.g. citric acid, fixed acidity and low pH are all correlated.
+Density is correlated with many factors in both red and white wines: this may also be intuitive as density is an aggregate property of the 
+constituent chemicals.
+alcohol is correlated with a lower density (alcohol has a lower density than water), 
+fixed acidity and residual sugars are correlated with higher density.  
+For red wines only, chlorides are correlated with sulphates.
 
 \begin{figure}[H]
 \centering
@@ -66,13 +71,14 @@ For both types, volatile acidity, chloride and density should be minimised.
 \\~\\
 Quality red wines (scoring 6 or higher) have on average significantly ($\alpha < 0.01$) lower volatile acidity, higher citric acid (and therefore lower pH),
 higher sulphates, and higher alcohol, than poor reds (scoring 4 or lower).\linebreak
-Quality white wines (scoring 6 or higher) have on average significantly ($\alpha < 0.01$) lower fixed and volatile acidity, higher residual sugar, chlorides, higher free sulfur dioxide but not total sulfur dioxide, density, than poor whites (scoring 4 or lower).\linebreak
-Both scored higher for higher alcohol content.
+Quality white wines (scoring 6 or higher) have on average significantly ($\alpha < 0.01$) lower fixed and volatile acidity, higher residual sugar, lower chlorides, higher free sulfur dioxide but not total sulfur dioxide, lower density, than poor whites (scoring 4 or lower).\linebreak
+Both scored higher for higher alcohol content.  Combining this with quadratic regressions, predictors of wine quality are
+summarised in figure \ref{fig:recipe}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[height=5.0cm]{figures/recipe.png}
-\caption{ideal properties for red and white wines; arrows indicate no optimum was found}
+\caption{ideal properties for red and white wines}
 \label{fig:recipe}
 \end{figure}
 
