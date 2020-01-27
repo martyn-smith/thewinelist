@@ -13,18 +13,11 @@ good for industry but doesn't answer "good/bad if X" well).
 -Font wrapping.
 """
 
-"""
-REQUIREMENTS:
-
-Developed with python 3.7.0, pandas 0.23.4, statsmodels 0.9.0, matplotlib 3.0.2,
-numpy 1.15.0, seaborn 0.9.0, sklearn 0.20.0
-"""
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from sklearn import tree
+#from sklearn import tree
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import statsmodels.graphics.api as smg

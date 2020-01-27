@@ -1,0 +1,291 @@
+
+
+testing : fixed acidity
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.014
+Model:                            OLS   Adj. R-squared:                  0.014
+Method:                 Least Squares   F-statistic:                     35.07
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           7.55e-16
+Time:                        16:05:44   Log-Likelihood:                -6319.8
+No. Observations:                4898   AIC:                         1.265e+04
+Df Residuals:                    4895   BIC:                         1.267e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================================
+                                 coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+Intercept                      5.5794      0.467     11.936      0.000       4.663       6.496
+Q('fixed acidity')             0.1988      0.131      1.520      0.129      -0.058       0.455
+I(Q('fixed acidity') ** 2)    -0.0223      0.009     -2.448      0.014      -0.040      -0.004
+==============================================================================
+Omnibus:                       31.216   Durbin-Watson:                   1.658
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               32.539
+Skew:                           0.174   Prob(JB):                     8.60e-08
+Kurtosis:                       3.197   Cond. No.                     1.92e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.92e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+testing : volatile acidity
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.038
+Model:                            OLS   Adj. R-squared:                  0.038
+Method:                 Least Squares   F-statistic:                     96.95
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           5.08e-42
+Time:                        16:05:44   Log-Likelihood:                -6259.5
+No. Observations:                4898   AIC:                         1.252e+04
+Df Residuals:                    4895   BIC:                         1.254e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+=================================================================================================
+                                    coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------
+Intercept                         6.4159      0.073     87.609      0.000       6.272       6.559
+Q('volatile acidity')            -2.1085      0.426     -4.951      0.000      -2.943      -1.274
+I(Q('volatile acidity') ** 2)     0.5557      0.570      0.975      0.330      -0.561       1.673
+==============================================================================
+Omnibus:                       77.247   Durbin-Watson:                   1.646
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               85.849
+Skew:                           0.270   Prob(JB):                     2.28e-19
+Kurtosis:                       3.360   Cond. No.                         59.4
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+testing : citric acid
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.016
+Model:                            OLS   Adj. R-squared:                  0.016
+Method:                 Least Squares   F-statistic:                     39.90
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.45e-18
+Time:                        16:05:44   Log-Likelihood:                -6315.0
+No. Observations:                4898   AIC:                         1.264e+04
+Df Residuals:                    4895   BIC:                         1.266e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+============================================================================================
+                               coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+Intercept                    5.4552      0.062     87.841      0.000       5.333       5.577
+Q('citric acid')             2.3954      0.295      8.113      0.000       1.817       2.974
+I(Q('citric acid') ** 2)    -2.9907      0.336     -8.910      0.000      -3.649      -2.333
+==============================================================================
+Omnibus:                       52.338   Durbin-Watson:                   1.658
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               61.901
+Skew:                           0.189   Prob(JB):                     3.62e-14
+Kurtosis:                       3.400   Cond. No.                         37.5
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+testing : residual sugar
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.010
+Model:                            OLS   Adj. R-squared:                  0.009
+Method:                 Least Squares   F-statistic:                     23.54
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.70e-11
+Time:                        16:05:44   Log-Likelihood:                -6331.2
+No. Observations:                4898   AIC:                         1.267e+04
+Df Residuals:                    4895   BIC:                         1.269e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+===============================================================================================
+                                  coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------
+Intercept                       5.9886      0.023    255.322      0.000       5.943       6.035
+Q('residual sugar')            -0.0177      0.005     -3.561      0.000      -0.027      -0.008
+I(Q('residual sugar') ** 2)  3.625e-05      0.000      0.154      0.878      -0.000       0.000
+==============================================================================
+Omnibus:                       25.834   Durbin-Watson:                   1.653
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               29.130
+Skew:                           0.126   Prob(JB):                     4.73e-07
+Kurtosis:                       3.281   Cond. No.                         238.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+testing : chlorides
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.071
+Model:                            OLS   Adj. R-squared:                  0.071
+Method:                 Least Squares   F-statistic:                     186.8
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.43e-79
+Time:                        16:05:44   Log-Likelihood:                -6174.5
+No. Observations:                4898   AIC:                         1.235e+04
+Df Residuals:                    4895   BIC:                         1.237e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+Intercept                  6.8011      0.053    128.167      0.000       6.697       6.905
+Q('chlorides')           -24.6875      1.470    -16.790      0.000     -27.570     -21.805
+I(Q('chlorides') ** 2)    80.3853      6.759     11.894      0.000      67.135      93.635
+==============================================================================
+Omnibus:                       30.090   Durbin-Watson:                   1.650
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               40.617
+Skew:                           0.074   Prob(JB):                     1.51e-09
+Kurtosis:                       3.421   Cond. No.                         566.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+testing : free sulfur dioxide
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.017
+Model:                            OLS   Adj. R-squared:                  0.016
+Method:                 Least Squares   F-statistic:                     41.64
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           1.17e-18
+Time:                        16:05:44   Log-Likelihood:                -6313.3
+No. Observations:                4898   AIC:                         1.263e+04
+Df Residuals:                    4895   BIC:                         1.265e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+Intercept                            5.6527      0.037    152.745      0.000       5.580       5.725
+Q('free sulfur dioxide')             0.0115      0.001      8.076      0.000       0.009       0.014
+I(Q('free sulfur dioxide') ** 2)    -0.0001   1.28e-05     -9.107      0.000      -0.000   -9.16e-05
+==============================================================================
+Omnibus:                       45.101   Durbin-Watson:                   1.662
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               46.951
+Skew:                           0.218   Prob(JB):                     6.38e-11
+Kurtosis:                       3.200   Cond. No.                     7.17e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.17e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+testing : total sulfur dioxide
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.048
+Model:                            OLS   Adj. R-squared:                  0.047
+Method:                 Least Squares   F-statistic:                     122.1
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           1.86e-52
+Time:                        16:05:44   Log-Likelihood:                -6235.4
+No. Observations:                4898   AIC:                         1.248e+04
+Df Residuals:                    4895   BIC:                         1.250e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================================
+                                        coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------
+Intercept                             5.5750      0.096     58.019      0.000       5.387       5.763
+Q('total sulfur dioxide')             0.0084      0.001      6.357      0.000       0.006       0.011
+I(Q('total sulfur dioxide') ** 2) -4.109e-05    4.4e-06     -9.338      0.000   -4.97e-05   -3.25e-05
+==============================================================================
+Omnibus:                       23.970   Durbin-Watson:                   1.667
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               26.483
+Skew:                           0.126   Prob(JB):                     1.78e-06
+Kurtosis:                       3.257   Cond. No.                     1.91e+05
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.91e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+testing : density
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.110
+Model:                            OLS   Adj. R-squared:                  0.109
+Method:                 Least Squares   F-statistic:                     301.5
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):          3.28e-124
+Time:                        16:05:44   Log-Likelihood:                -6070.1
+No. Observations:                4898   AIC:                         1.215e+04
+Df Residuals:                    4895   BIC:                         1.217e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+Intercept             3791.2136    402.184      9.427      0.000    3002.752    4579.675
+Q('density')         -7514.3851    807.992     -9.300      0.000   -9098.413   -5930.357
+I(Q('density') ** 2)  3728.5408    405.822      9.188      0.000    2932.948    4524.134
+==============================================================================
+Omnibus:                       47.087   Durbin-Watson:                   1.646
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               73.512
+Skew:                           0.065   Prob(JB):                     1.09e-16
+Kurtosis:                       3.586   Cond. No.                     1.43e+05
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.43e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+testing : pH
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.010
+Model:                            OLS   Adj. R-squared:                  0.009
+Method:                 Least Squares   F-statistic:                     24.44
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           2.74e-11
+Time:                        16:05:44   Log-Likelihood:                -6330.3
+No. Observations:                4898   AIC:                         1.267e+04
+Df Residuals:                    4895   BIC:                         1.269e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+===================================================================================
+                      coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------
+Intercept           3.6743      3.768      0.975      0.330      -3.713      11.062
+Q('pH')             0.7974      2.340      0.341      0.733      -3.789       5.384
+I(Q('pH') ** 2)    -0.0332      0.363     -0.092      0.927      -0.744       0.678
+==============================================================================
+Omnibus:                       26.352   Durbin-Watson:                   1.639
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               28.536
+Skew:                           0.142   Prob(JB):                     6.36e-07
+Kurtosis:                       3.244   Cond. No.                     3.80e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.8e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+testing : sulphates
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.010
+Model:                            OLS   Adj. R-squared:                  0.010
+Method:                 Least Squares   F-statistic:                     25.93
+Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.27e-12
+Time:                        16:05:44   Log-Likelihood:                -6328.8
+No. Observations:                4898   AIC:                         1.266e+04
+Df Residuals:                    4895   BIC:                         1.268e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+Intercept                  6.7025      0.177     37.938      0.000       6.356       7.049
+Q('sulphates')            -3.5703      0.659     -5.415      0.000      -4.863      -2.278
+I(Q('sulphates') ** 2)     3.6537      0.596      6.133      0.000       2.486       4.822
+==============================================================================
+Omnibus:                       26.447   Durbin-Watson:                   1.657
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               28.761
+Skew:                           0.141   Prob(JB):                     5.68e-07
+Kurtosis:                       3.249   Cond. No.                         82.0
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
