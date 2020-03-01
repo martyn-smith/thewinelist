@@ -6,8 +6,8 @@ testing : fixed acidity
 Dep. Variable:                quality   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                  0.014
 Method:                 Least Squares   F-statistic:                     35.07
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           7.55e-16
-Time:                        16:05:44   Log-Likelihood:                -6319.8
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           7.55e-16
+Time:                        23:21:28   Log-Likelihood:                -6319.8
 No. Observations:                4898   AIC:                         1.265e+04
 Df Residuals:                    4895   BIC:                         1.267e+04
 Df Model:                           2                                         
@@ -36,8 +36,8 @@ testing : volatile acidity
 Dep. Variable:                quality   R-squared:                       0.038
 Model:                            OLS   Adj. R-squared:                  0.038
 Method:                 Least Squares   F-statistic:                     96.95
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           5.08e-42
-Time:                        16:05:44   Log-Likelihood:                -6259.5
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           5.08e-42
+Time:                        23:21:28   Log-Likelihood:                -6259.5
 No. Observations:                4898   AIC:                         1.252e+04
 Df Residuals:                    4895   BIC:                         1.254e+04
 Df Model:                           2                                         
@@ -64,8 +64,8 @@ testing : citric acid
 Dep. Variable:                quality   R-squared:                       0.016
 Model:                            OLS   Adj. R-squared:                  0.016
 Method:                 Least Squares   F-statistic:                     39.90
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.45e-18
-Time:                        16:05:44   Log-Likelihood:                -6315.0
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           6.45e-18
+Time:                        23:21:28   Log-Likelihood:                -6315.0
 No. Observations:                4898   AIC:                         1.264e+04
 Df Residuals:                    4895   BIC:                         1.266e+04
 Df Model:                           2                                         
@@ -92,8 +92,8 @@ testing : residual sugar
 Dep. Variable:                quality   R-squared:                       0.010
 Model:                            OLS   Adj. R-squared:                  0.009
 Method:                 Least Squares   F-statistic:                     23.54
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.70e-11
-Time:                        16:05:44   Log-Likelihood:                -6331.2
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           6.70e-11
+Time:                        23:21:28   Log-Likelihood:                -6331.2
 No. Observations:                4898   AIC:                         1.267e+04
 Df Residuals:                    4895   BIC:                         1.269e+04
 Df Model:                           2                                         
@@ -120,8 +120,8 @@ testing : chlorides
 Dep. Variable:                quality   R-squared:                       0.071
 Model:                            OLS   Adj. R-squared:                  0.071
 Method:                 Least Squares   F-statistic:                     186.8
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.43e-79
-Time:                        16:05:44   Log-Likelihood:                -6174.5
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           6.43e-79
+Time:                        23:21:28   Log-Likelihood:                -6174.5
 No. Observations:                4898   AIC:                         1.235e+04
 Df Residuals:                    4895   BIC:                         1.237e+04
 Df Model:                           2                                         
@@ -148,8 +148,8 @@ testing : free sulfur dioxide
 Dep. Variable:                quality   R-squared:                       0.017
 Model:                            OLS   Adj. R-squared:                  0.016
 Method:                 Least Squares   F-statistic:                     41.64
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           1.17e-18
-Time:                        16:05:44   Log-Likelihood:                -6313.3
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           1.17e-18
+Time:                        23:21:28   Log-Likelihood:                -6313.3
 No. Observations:                4898   AIC:                         1.263e+04
 Df Residuals:                    4895   BIC:                         1.265e+04
 Df Model:                           2                                         
@@ -178,8 +178,8 @@ testing : total sulfur dioxide
 Dep. Variable:                quality   R-squared:                       0.048
 Model:                            OLS   Adj. R-squared:                  0.047
 Method:                 Least Squares   F-statistic:                     122.1
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           1.86e-52
-Time:                        16:05:44   Log-Likelihood:                -6235.4
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           1.86e-52
+Time:                        23:21:28   Log-Likelihood:                -6235.4
 No. Observations:                4898   AIC:                         1.248e+04
 Df Residuals:                    4895   BIC:                         1.250e+04
 Df Model:                           2                                         
@@ -208,8 +208,8 @@ testing : density
 Dep. Variable:                quality   R-squared:                       0.110
 Model:                            OLS   Adj. R-squared:                  0.109
 Method:                 Least Squares   F-statistic:                     301.5
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):          3.28e-124
-Time:                        16:05:44   Log-Likelihood:                -6070.1
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):          3.28e-124
+Time:                        23:21:28   Log-Likelihood:                -6070.1
 No. Observations:                4898   AIC:                         1.215e+04
 Df Residuals:                    4895   BIC:                         1.217e+04
 Df Model:                           2                                         
@@ -238,8 +238,8 @@ testing : pH
 Dep. Variable:                quality   R-squared:                       0.010
 Model:                            OLS   Adj. R-squared:                  0.009
 Method:                 Least Squares   F-statistic:                     24.44
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           2.74e-11
-Time:                        16:05:44   Log-Likelihood:                -6330.3
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           2.74e-11
+Time:                        23:21:28   Log-Likelihood:                -6330.3
 No. Observations:                4898   AIC:                         1.267e+04
 Df Residuals:                    4895   BIC:                         1.269e+04
 Df Model:                           2                                         
@@ -268,8 +268,8 @@ testing : sulphates
 Dep. Variable:                quality   R-squared:                       0.010
 Model:                            OLS   Adj. R-squared:                  0.010
 Method:                 Least Squares   F-statistic:                     25.93
-Date:                Mon, 27 Jan 2020   Prob (F-statistic):           6.27e-12
-Time:                        16:05:44   Log-Likelihood:                -6328.8
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):           6.27e-12
+Time:                        23:21:28   Log-Likelihood:                -6328.8
 No. Observations:                4898   AIC:                         1.266e+04
 Df Residuals:                    4895   BIC:                         1.268e+04
 Df Model:                           2                                         
@@ -289,3 +289,33 @@ Kurtosis:                       3.249   Cond. No.                         82.0
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+testing : alcohol
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.193
+Model:                            OLS   Adj. R-squared:                  0.192
+Method:                 Least Squares   F-statistic:                     583.5
+Date:                Sat, 29 Feb 2020   Prob (F-statistic):          5.11e-228
+Time:                        23:21:28   Log-Likelihood:                -5830.9
+No. Observations:                4898   AIC:                         1.167e+04
+Df Residuals:                    4895   BIC:                         1.169e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+Intercept                6.0382      0.846      7.140      0.000       4.380       7.696
+Q('alcohol')            -0.3346      0.158     -2.121      0.034      -0.644      -0.025
+I(Q('alcohol') ** 2)     0.0300      0.007      4.114      0.000       0.016       0.044
+==============================================================================
+Omnibus:                       82.927   Durbin-Watson:                   1.638
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              163.695
+Skew:                           0.031   Prob(JB):                     2.84e-36
+Kurtosis:                       3.894   Cond. No.                     8.75e+03
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.75e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
